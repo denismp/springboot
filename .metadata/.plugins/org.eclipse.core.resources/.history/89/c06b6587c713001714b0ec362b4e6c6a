@@ -1,0 +1,32 @@
+package com.example.rest.controller;
+
+import org.springframework.mock.web.MockHttpServletRequest;
+import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.ParameterizableViewController;
+
+@RestController
+public class HelloController extends ParameterizableViewController {
+	
+	@RequestMapping("/hello")
+	public String hello(@RequestParam String name){
+		return "Hello "+name;
+	}
+
+	protected void handleRequestInternal(MockHttpServletRequest request, MockHttpServletResponse response) {
+		// TODO Auto-generated method stub
+        final ModelAndView modelAndView = super.handleRequestInternal(request, response);
+
+        //we really want 5, but we are checking to see if we need the "more posts" link
+        //final List<Post> posts = postService.getPosts(0, 6);
+
+        modelAndView.addObject("postingList", posts);
+
+        return modelAndView;		
+		
+	}
+
+}

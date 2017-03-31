@@ -1,0 +1,6 @@
+package com.example.rest.controller;
+
+@RestController
+public class HelloController {
+
+}

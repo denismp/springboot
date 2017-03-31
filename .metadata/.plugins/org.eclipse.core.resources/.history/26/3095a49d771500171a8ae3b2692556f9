@@ -1,0 +1,43 @@
+package com.example.service;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.dao.UserDao;
+import com.example.entity.User;
+
+@Service("userService")
+public class UserService {
+	private final Logger log = Logger.getLogger (this.getClass());
+	@Autowired UserDao userDao;
+	
+	public User getByEmail(String email){
+		
+		String userId = null;
+		User user = null;
+		try{
+			user = userDao.findByEmail(email);
+			userId = String.valueOf(user.getId());
+		}catch(Exception e){
+			log.error("User not found");
+			e.printStackTrace();
+		}
+		log.info("The user id is: " + userId);
+		return user;		
+	}
+	
+	public User create( String email, String name ){
+		User user = null;
+		try{
+			user = new User();
+			user.setEmail(name);
+			user.setName(name);
+			userDao.save(user);
+		}catch( Exception e ){
+			log.error("Error creating the user: " + e.getMessage());
+		}
+		log.info("User id: " + user.getId() + " saved.");
+		return user;
+	}
+}

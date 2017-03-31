@@ -1,0 +1,24 @@
+/**
+ * 
+ */
+package com.example.rest.controller;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+/**
+ * @author denisputnam
+ *
+ */
+public class HelloControllerTest {
+
+	/**
+	 * Test method for {@link com.example.rest.controller.HelloController#hello(java.lang.String)}.
+	 */
+	@Test
+	public void testHello() {
+		fail("Not yet implemented");
+	}
+
+}

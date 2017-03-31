@@ -1,0 +1,28 @@
+package com.example.rest.controller;
+
+import static org.junit.Assert.*;
+import org.easymock.EasyMock;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class HelloControllerTest {
+	@Before
+	public void setUp() {
+        postDao = EasyMock.createMock(PostDao.class);
+
+//        postService = new DefaultPostService();
+//        postService.setPostDao(postDao);
+//        
+//		controller = new HomepageController();
+//		controller.setPostService(this.postService);
+//		adapter = new AnnotationMethodHandlerAdapter();
+//		request = new MockHttpServletRequest();
+//		response = new MockHttpServletResponse();
+	}
+	@Test
+	public void testHello() {
+		fail("Not yet implemented");
+	}
+
+}

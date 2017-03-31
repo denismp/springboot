@@ -1,0 +1,39 @@
+package com.example.rest.controller;
+
+import static org.junit.Assert.*;
+
+import org.easymock.EasyMock;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.mock.web.MockHttpServletRequest;
+import org.springframework.mock.web.MockHttpServletResponse;
+//import org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter;
+import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
+
+@SuppressWarnings("deprecation")
+public class HelloControllerTest {
+	MockHttpServletRequest request;
+	MockHttpServletResponse response;
+	HelloController controller;
+//	AnnotationMethodHandlerAdapter adapter;
+	RequestMappingHandlerAdapter adapter;
+	
+	@Before
+	public void setUp() {
+        postDao = EasyMock.createMock(String.class);
+
+//        postService = new DefaultPostService();
+//        postService.setPostDao(postDao);
+//        
+//		controller = new HomepageController();
+//		controller.setPostService(this.postService);
+//		adapter = new AnnotationMethodHandlerAdapter();
+//		request = new MockHttpServletRequest();
+//		response = new MockHttpServletResponse();
+	}
+	@Test
+	public void testHello() {
+		fail("Not yet implemented");
+	}
+
+}

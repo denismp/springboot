@@ -1,0 +1,95 @@
+package com.example.dao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
+import com.example.entity.User;
+
+@Repository
+@Transactional
+public class UserDao implements UserDaoInterface {
+	
+	@PersistenceContext
+	private EntityManager entityManager;
+
+	@Override
+	public <S extends User> S save(S entity) {
+		// TODO Auto-generated method stub
+		return save(entity);
+	}
+
+	@Override
+	public <S extends User> Iterable<S> save(Iterable<S> entities) {
+		// TODO Auto-generated method stub
+		return save(entities);
+
+	}
+
+	@Override
+	public User findOne(Long id) {
+		// TODO Auto-generated method stub
+		return findOne(id);
+	}
+
+	@Override
+	public boolean exists(Long id) {
+		// TODO Auto-generated method stub
+		return exists(id);
+	}
+
+	@Override
+	public Iterable<User> findAll() {
+		// TODO Auto-generated method stub
+		return findAll();
+	}
+
+	//@Override
+	public Iterable<User> findAll(Iterable<Long> ids) {
+		// TODO Auto-generated method stub
+		return findAll(ids);
+	}
+
+	@Override
+	public long count() {
+		// TODO Auto-generated method stub
+		return count();
+	}
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		delete(id);
+
+	}
+
+	@Override
+	public void delete(User entity) {
+		// TODO Auto-generated method stub
+		delete(entity);
+
+	}
+
+	@Override
+	public void delete(Iterable<? extends User> entities) {
+		// TODO Auto-generated method stub
+		delete( entities );
+
+	}
+
+	@Override
+	public void deleteAll() {
+		// TODO Auto-generated method stub
+		deleteAll();
+
+	}
+
+	@Override
+	public User findByEmail(String email) {
+		// TODO Auto-generated method stub
+		return findByEmail(email);
+	}
+
+}

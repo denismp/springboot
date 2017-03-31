@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+<fullyQualifiedTypeName name="org.junit.Before"/>
+<fullyQualifiedTypeName name="org.springframework.mock.web.MockHttpServletRequest"/>
+<fullyQualifiedTypeName name="org.springframework.mock.web.MockHttpServletResponse"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+<fullyQualifiedTypeName name="org.easymock.EasyMock"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.ParameterizableViewController"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+</qualifiedTypeNameHistroy>

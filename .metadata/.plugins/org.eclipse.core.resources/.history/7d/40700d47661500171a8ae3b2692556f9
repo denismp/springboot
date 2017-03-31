@@ -1,0 +1,10 @@
+# Hibernate Settings
+hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
+hibernate.show_sql = true
+hibernate.format_sql = true
+hibernate.createorupdate = update
+
+app.datasource.finra.url=jdbc:mysql://localhost/finra
+app.datasource.finra.username=finra
+app.datasource.finra.password=finra
+app.datasource.finra.maximum-pool-size=30

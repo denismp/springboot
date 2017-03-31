@@ -1,0 +1,14 @@
+package com.example.rest.controller;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class HelloControllerTest {
+
+	@Test
+	public void testHello() {
+		fail("Not yet implemented");
+	}
+
+}

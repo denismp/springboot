@@ -1,0 +1,53 @@
+package com.example.rest.controller;
+
+import static org.junit.Assert.*;
+
+import org.easymock.EasyMock;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.mock.web.MockHttpServletRequest;
+import org.springframework.mock.web.MockHttpServletResponse;
+//import org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter;
+import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
+
+public class HelloControllerTest {
+	MockHttpServletRequest request;
+	MockHttpServletResponse response;
+	HelloController controller;
+//	AnnotationMethodHandlerAdapter adapter;
+	RequestMappingHandlerAdapter adapter;
+	HelloInterface myInterface;
+	
+	@Before
+	public void setUp() {
+        myInterface = EasyMock.createMock(HelloInterface.class);
+
+//        postService = new DefaultPostService();
+//        postService.setPostDao(postDao);
+//        
+		controller = new HelloController();
+//		controller.setPostService(this.postService);
+//		adapter = new AnnotationMethodHandlerAdapter();
+		adapter = new RequestMappingHandlerAdapter();
+		request = new MockHttpServletRequest();
+		response = new MockHttpServletResponse();
+	}
+	@Test
+	public void testHello() throws Exception {
+		//fail("Not yet implemented");
+		request.setRequestURI("/hello?name=Denis");
+		controller.handleRequestInternal(request, response);
+		
+		int status = response.getStatus();
+		if( status != 200 ){
+			fail("Status was not 200");
+		}
+		
+		//EasyMock.expectLastCall().once();
+		//EasyMock.replay(controller);
+		
+		//adapter.handle(request, response, controller);
+		//EasyMock.verify(controller);
+	}
+
+}
