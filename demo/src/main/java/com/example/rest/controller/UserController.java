@@ -59,6 +59,11 @@ public class UserController {
 		User user = null;
 		try{
 			user = userService.create(email, name);
+			if( user.getId() == 0 ){
+				log.error("User already exists for: " + email);
+				ResponseEntity<User> rVal = new ResponseEntity<User>(user, HttpStatus.BAD_REQUEST);
+				return rVal;				
+			}
 		}catch( Exception e ) {
 			log.error("Error creating the user: " + e.toString());
 			ResponseEntity<User> rVal = new ResponseEntity<User>(user, HttpStatus.BAD_REQUEST);
