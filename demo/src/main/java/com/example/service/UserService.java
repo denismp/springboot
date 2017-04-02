@@ -15,6 +15,10 @@ public class UserService {
 	
 	@Autowired UserDao userDao;
 	
+	public void setUserDao( UserDao userDao ){
+		this.userDao = userDao;
+	}
+	
 	public List<User> findAll(){
 		return (List<User>) userDao.findAll();
 	}
@@ -39,7 +43,7 @@ public class UserService {
 		return user;		
 	}
 	
-	public User create( String email, String name ){
+	public User create( String email, String name ) throws Exception{
 		User user = null;
 		try{
 			user = new User();
@@ -48,12 +52,13 @@ public class UserService {
 			userDao.save(user);
 		}catch( Exception e ){
 			log.error("Error creating the user: " + e.getMessage());
+			throw new Exception(e);
 		}
 		log.info("User id: " + user.getId() + " saved.");
 		return user;
 	}
 	
-	public User updateUser(long id, String email, String name ){
+	public User updateUser(long id, String email, String name ) throws Exception{
 		User user = null;
 		try{
 			user = userDao.findOne(id);
@@ -62,6 +67,7 @@ public class UserService {
 			userDao.save(user);
 		}catch( Exception e ){
 			log.error("Error updating the user: " + e.getMessage());
+			throw new Exception(e);
 		}
 		return user;
 	}
