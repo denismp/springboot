@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.dao.UserDao;
+import com.example.dao.mysql.UserDao;
 import com.example.entity.User;
 
 @Service("userService")

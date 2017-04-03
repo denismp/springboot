@@ -37,7 +37,7 @@ import com.example.entity.User;
 @EnableJpaRepositories(
 		entityManagerFactoryRef = "mysqlEntityManager", 
 		transactionManagerRef = "mysqlTransactionManager", 
-		basePackages = "com.example"
+		basePackages = "com.example.dao.mysql"
 )
 public class MysqlConfiguration {
 
@@ -84,6 +84,7 @@ public class MysqlConfiguration {
 		Resource resource = new ClassPathResource("hibernate.properties");
 		try {
 			Properties properties = PropertiesLoaderUtils.loadProperties(resource);
+			properties.put("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
 			return properties.entrySet().stream()
 											.collect(Collectors.toMap(
 														e -> e.getKey().toString(),
